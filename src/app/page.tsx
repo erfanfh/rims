@@ -1,0 +1,15 @@
+import Link from 'next/link';
+import {ArrowLeft,ShieldCheck,BarChart3,Database,ClipboardList,CheckCircle2} from 'lucide-react';
+export default function Home(){return <>
+ <section className="hero section"><div className="container grid md:grid-cols-2 items-center gap-12 py-8">
+  <div><span className="badge mb-5">پژوهش دانشگاهی · صنعت ساخت</span><h1 className="h1 mb-5">سامانه سنجش بلوغ<br/><span className="text-[#29735d]">مدیریت ریسک سازمانی</span></h1><p className="text-lg text-slate-600 mb-6">ارزیابی نظام‌مند وضعیت مدیریت ریسک بر اساس پنج رکن مدل RIMS 2022، با ثبت امن داده‌ها و گزارش تحلیلی قابل بازبینی.</p><div className="flex gap-3 flex-wrap"><Link href="/login" className="btn btn-primary">شروع ارزیابی <ArrowLeft size={18}/></Link><Link href="/login" className="btn">ادامه ارزیابی</Link></div>
+  <p className="muted text-xs mt-5">امتیاز عددی از ۱ تا ۵؛ سطح Tier فقط با آستانه مستند تأییدشده نمایش داده می‌شود.</p></div>
+  <div className="card"><div className="flex items-center justify-between mb-4"><span className="badge">ساختار ابزار</span><ClipboardList className="text-[#316e5f]"/></div><h2 className="h2 mb-5">مدل پنج‌رکنی RIMS</h2>{[['هم‌راستایی با راهبرد','۲۵٪'],['فرهنگ و پاسخ‌گویی','۳۰٪'],['قابلیت‌های مدیریت ریسک','۲۰٪'],['حاکمیت ریسک','۱۳٪'],['تحلیل‌گری','۱۲٪']].map(([name,w])=><div key={name} className="flex justify-between border-b border-slate-100 py-3"><span>{name}</span><strong>{w}</strong></div>)}<div className="grid grid-cols-3 gap-3 mt-6"><div className="kpi text-center"><strong>۳۵</strong><span className="text-xs">شاخص اصلی</span></div><div className="kpi text-center"><strong>۵</strong><span className="text-xs">رکن</span></div><div className="kpi text-center"><strong>۴۲</strong><span className="text-xs">مورد پرسش‌نامه</span></div></div></div>
+ </div></section>
+ <section className="section container"><h2 className="h2 mb-3">فرایند ارزیابی</h2><p className="muted mb-7">سه گام روشن از ثبت اطلاعات تا دریافت گزارش پژوهشی</p><div className="grid md:grid-cols-3 gap-5">{[
+ {icon:<ShieldCheck/>,n:'۰۱',title:'ثبت مشخصات و رضایت آگاهانه',body:'شروع بدون ایمیل، واردکردن کد دعوت سازمان و ثبت مشخصات حرفه‌ای همراه با رضایت آگاهانه.'},
+ {icon:<ClipboardList/>,n:'۰۲',title:'تکمیل پرسش‌نامه',body:'پاسخ به ۳۷ سؤال و تعیین پنج سطح هدف؛ امکان ذخیره و ادامه در زمان بعد.'},
+ {icon:<BarChart3/>,n:'۰۳',title:'دریافت گزارش',body:'مشاهده امتیاز پنج رکن، امتیاز کل، نمودار و فاصله وضعیت موجود با هدف.'}
+ ].map(c=><article key={c.n} className="card"><div className="flex justify-between text-[#326b5a] mb-5">{c.icon}<span className="text-2xl font-extrabold opacity-30">{c.n}</span></div><h3 className="h3 mb-2">{c.title}</h3><p className="text-sm muted">{c.body}</p></article>)}</div></section>
+ <section className="container pb-14"><div className="card flex flex-wrap gap-6 items-center justify-between"><div><h2 className="h2 mb-1">حفاظت از محرمانگی داده‌های پژوهش</h2><p className="text-sm muted">پاسخ‌های شما برای سایر شرکت‌ها قابل مشاهده نیست و خروجی‌های پژوهشی به‌صورت پیش‌فرض ناشناس‌سازی می‌شوند.</p></div><div className="flex items-center gap-3 text-[#2f765f]"><Database/><CheckCircle2/></div></div></section>
+ </>}
